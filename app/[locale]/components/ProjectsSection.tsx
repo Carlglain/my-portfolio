@@ -20,7 +20,7 @@ const ProjectsSection = () => {
     {
       title: "Car Fault Diagnostic System (MottoFix)",
       description: "A mobile application that diagnoses vehicle faults from images and audio recordings using AI-powered analysis. Features Firebase authentication, real-time diagnostic results, and a clean React Native (Expo) interface.",
-      image: "/work-car-diagnostic.png",
+      image: "/work-2.png",
       technologies: ["React Native", "Expo", "Firebase", "Node.js", "Gemini API","Youtube API"],
       liveUrl: "",
       githubUrl: "https://github.com/Carlglain/MottoFix",
