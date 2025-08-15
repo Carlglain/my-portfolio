@@ -44,7 +44,7 @@ const ProjectsSection = () => {
       technologies: ["Next.js", "TypeScript", "Tailwind CSS", "next-intl"],
       liveUrl: "https://carlstorm-portfolio.vercel.app/en",
       githubUrl: "https://github.com/carlglain/my-portfolio",
-      featured: true
+      featured: false
     },
     {
       title: "Passenger Positioning System",
