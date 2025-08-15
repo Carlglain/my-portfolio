@@ -9,23 +9,24 @@ const ProjectsSection = () => {
 
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce platform built with Next.js, featuring user authentication, payment processing, and admin dashboard.",
+      title: "Expenditure tracking Platform (Expendee)",
+      description: "A full-stack AI powered platform built with React.js, featuring user authentication. it permits users to track their expenses.",
       image: "/work-1.png",
-      technologies: ["Next.js", "MongoDB", "Stripe", "Tailwind CSS"],
-      liveUrl: "https://ecommerce-demo.com",
-      githubUrl: "https://github.com/carlglain/ecommerce",
+      technologies: ["React.js", "MongoDB", "CSS", "express.js"],
+      liveUrl: "https://expendee.vercel.app/",
+      githubUrl: "https://github.com/Carlglain/Expendee",
       featured: true
     },
     {
-      title: "Task Management App",
-      description: "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-      image: "/work-2.png",
-      technologies: ["React", "Node.js", "Socket.io", "PostgreSQL"],
-      liveUrl: "https://task-app-demo.com",
-      githubUrl: "https://github.com/carlglain/task-app",
+      title: "Car Fault Diagnostic System (MottoFix)",
+      description: "A mobile application that diagnoses vehicle faults from images and audio recordings using AI-powered analysis. Features Firebase authentication, real-time diagnostic results, and a clean React Native (Expo) interface.",
+      image: "/work-car-diagnostic.png",
+      technologies: ["React Native", "Expo", "Firebase", "Node.js", "Gemini API","Youtube API"],
+      liveUrl: "",
+      githubUrl: "https://github.com/Carlglain/MottoFix",
       featured: true
     },
+    
     // Add the third featured project back if you have it
     // {
     //   title: "Mobile Banking App",
@@ -41,26 +42,26 @@ const ProjectsSection = () => {
       description: "A modern, responsive portfolio website built with Next.js and internationalization support.",
       image: "/work-4.png",
       technologies: ["Next.js", "TypeScript", "Tailwind CSS", "next-intl"],
-      liveUrl: "https://carlglain-portfolio.com",
-      githubUrl: "https://github.com/carlglain/portfolio",
-      featured: false
+      liveUrl: "https://carlstorm-portfolio.vercel.app/en",
+      githubUrl: "https://github.com/carlglain/my-portfolio",
+      featured: true
     },
     {
-      title: "Weather Dashboard",
-      description: "A weather application with real-time data, location-based forecasts, and interactive weather maps.",
+      title: "Passenger Positioning System",
+      description: "The purpose of this project is to provide a description of a passenger positioning system that will help Passengers firstly to get a taxi quickly and drivers to be able to locate passengers and hence minimize fuel.",
       image: "/work-1.png",
       technologies: ["React", "OpenWeather API", "Chart.js", "CSS3"],
-      liveUrl: "https://weather-dashboard-demo.com",
-      githubUrl: "https://github.com/carlglain/weather-app",
+      liveUrl: "",
+      githubUrl: "https://github.com/Carlglain/Passenger-Positioning-system",
       featured: false
     },
     {
-      title: "Blog Platform",
-      description: "A content management system for blogs with markdown support, SEO optimization, and analytics dashboard.",
+      title: "Medi-Finder",
+      description: "A site that permits users to search for medical facilities and hospitals in their area.",
       image: "/work-2.png",
-      technologies: ["Next.js", "MongoDB", "Markdown", "Vercel"],
-      liveUrl: "https://blog-platform-demo.com",
-      githubUrl: "https://github.com/carlglain/blog-platform",
+      technologies: ["React.js", "MongoDB", "Markdown", "Vercel"],
+      liveUrl: "https://medi-finder-orcin.vercel.app/",
+      githubUrl: "https://github.com/Carlglain/Medi-Finder",
       featured: false
     }
   ];
