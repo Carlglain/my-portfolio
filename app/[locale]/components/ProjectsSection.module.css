@@ -1,0 +1,244 @@
+/* ProjectsSection.module.css */
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .projectsSection {
+    padding: 4rem 0;
+    background-color: #F9FAFB;
+    border-top: 1px solid #E5E7EB;
+  }
+  .dark .projectsSection { 
+    background-color: #111827; 
+    border-top-color: #374151;
+  }
+  
+  .container {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  /* ======== Section & Sub Headers ======== */
+  .sectionHeader {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeInUp 0.5s ease-out forwards;
+  }
+  .sectionHeader h2 {
+    font-size: 2.25rem; font-weight: 700; color: #111827; margin-bottom: 1rem;
+  }
+  .dark .sectionHeader h2 { color: #ffffff; }
+  
+  .sectionHeader p {
+    font-size: 1.125rem; color: #4B5563; max-width: 48rem; margin: 0 auto;
+  }
+  .dark .sectionHeader p { color: #D1D5DB; }
+  
+  .subSection {
+    margin-top: 4rem;
+  }
+  .subHeader {
+    text-align: center;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 2rem;
+  }
+  .dark .subHeader { color: #ffffff; }
+  
+  
+  /* ======== Project Grids ======== */
+  .featuredGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .otherGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  
+  /* ======== Base Project Card Styles ======== */
+  .projectCard {
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    border: 1px solid #E5E7EB;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.5s ease-out forwards;
+    opacity: 0;
+  }
+  .dark .projectCard { 
+    background-color: #1F2937; 
+    border-color: #374151; 
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.2), 0 2px 4px -2px rgb(0 0 0 / 0.2);
+  }
+  
+  .projectCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  }
+  .dark .projectCard:hover {
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.4), 0 8px 10px -6px rgb(0 0 0 / 0.4);
+  }
+  
+  .cardImageWrapper {
+    position: relative;
+    overflow: hidden;
+    background-color: #F3F4F6; /* Placeholder color */
+  }
+  .featuredCard .cardImageWrapper { height: 16rem; }
+  .projectCard .cardImageWrapper { height: 12rem; }
+  
+  .cardImage {
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  .projectCard:hover .cardImage { transform: scale(1.05); }
+  
+  .imageOverlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(17, 24, 39, 0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  .projectCard:hover .imageOverlay { opacity: 1; }
+  
+  .overlayLinks { display: flex; gap: 1rem; }
+  .overlayLinks a {
+    background-color: #ffffff;
+    color: #111827;
+    padding: 0.75rem;
+    border-radius: 9999px;
+    display: flex;
+    transition: all 0.3s ease;
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  .projectCard:hover .overlayLinks a {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  .projectCard:hover .overlayLinks a:nth-child(2) { transition-delay: 0.1s; }
+  .overlayLinks a:hover {
+    background-color: #F5F3FF;
+    color: #7C3AED;
+  }
+  
+  
+  /* ======== Card Content ======== */
+  .cardContent { padding: 1.5rem; }
+  .featuredCard .cardContent { padding: 1.5rem; }
+  .otherGrid .projectCard .cardContent { padding: 1rem; }
+  
+  .cardContent h4 {
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.5rem;
+  }
+  .dark .cardContent h4 { color: #ffffff; }
+  .featuredCard h4 { font-size: 1.25rem; }
+  .otherGrid .projectCard h4 { font-size: 1.1rem; }
+  
+  .cardContent p {
+    color: #4B5563;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+  .dark .cardContent p { color: #D1D5DB; }
+  
+  .tagsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .techTag {
+    padding: 0.25rem 0.75rem;
+    background-color: #EEF2FF;
+    color: #4338CA;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+  .dark .techTag { background-color: rgba(99, 102, 241, 0.2); color: #C7D2FE; }
+  
+  .techTagMore {
+    padding: 0.25rem 0.75rem;
+    background-color: #F3F4F6;
+    color: #4B5563;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+  .dark .techTagMore { background-color: #374151; color: #9CA3AF; }
+  
+  /* ======== CTA Section ======== */
+  .ctaSection {
+    margin-top: 4rem;
+  }
+  .ctaCard {
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    padding: 2.5rem;
+    text-align: center;
+    border: 1px solid #E5E7EB;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+  }
+  .dark .ctaCard { background-color: #1F2937; border-color: #374151; }
+  
+  .ctaCard h3 {
+    font-size: 1.5rem; font-weight: 700; color: #111827; margin-bottom: 1rem;
+  }
+  .dark .ctaCard h3 { color: #ffffff; }
+  
+  .ctaCard p {
+    color: #4B5563; margin-bottom: 1.5rem; max-width: 42rem; margin-left: auto; margin-right: auto;
+  }
+  .dark .ctaCard p { color: #D1D5DB; }
+  
+  .ctaButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(to right, #7C3AED, #9333EA);
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+  }
+  .ctaButton:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  }
+  
+  
+  /* --- Responsive Design --- */
+  @media (min-width: 640px) { /* sm */
+    .container { padding: 0 1.5rem; }
+    .sectionHeader h2 { font-size: 2.75rem; }
+    .otherGrid { grid-template-columns: repeat(2, 1fr); }
+    .featuredCard .cardImageWrapper { height: 20rem; }
+  }
+  
+  @media (min-width: 1024px) { /* lg */
+    .projectsSection { padding: 6rem 0; }
+    .container { padding: 0 2rem; }
+    .sectionHeader { margin-bottom: 5rem; }
+    .sectionHeader h2 { font-size: 3rem; }
+    .featuredGrid { grid-template-columns: repeat(2, 1fr); }
+    .otherGrid { grid-template-columns: repeat(3, 1fr); }
+  }

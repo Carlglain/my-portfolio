@@ -1,0 +1,234 @@
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes growProgressBar {
+    from { width: 0; }
+    to { width: var(--skill-level, 0%); } /* Animate to the value of the CSS variable */
+  }
+  
+  .skillsSection {
+    padding: 4rem 0;
+    background-color: #F9FAFB;
+    border-top: 1px solid #E5E7EB; /* Subtle separator */
+  }
+  .dark .skillsSection { 
+    background-color: #111827; /* Darker background than other sections */
+    border-top: 1px solid #374151;
+  }
+  
+  .container {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  /* ======== Section Header ======== */
+  .sectionHeader {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeInUp 0.5s ease-out forwards;
+  }
+  .sectionHeader h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 1rem;
+  }
+  .dark .sectionHeader h2 { color: #ffffff; }
+  
+  .sectionHeader p {
+    font-size: 1.125rem;
+    color: #4B5563;
+    max-width: 48rem;
+    margin: 0 auto;
+  }
+  .dark .sectionHeader p { color: #D1D5DB; }
+  
+  /* ======== Main Skills Grid ======== */
+  .skillsGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .skillCard {
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    border: 1px solid #E5E7EB;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 0.5s ease-out forwards;
+    opacity: 0; /* Initially hidden for animation */
+  }
+  .dark .skillCard { 
+    background-color: #1F2937; 
+    border-color: #374151; 
+  }
+  
+  .skillCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.07);
+  }
+  /* Stagger the animation */
+  .skillCard:nth-child(2) { animation-delay: 0.1s; }
+  .skillCard:nth-child(3) { animation-delay: 0.2s; }
+  .skillCard:nth-child(4) { animation-delay: 0.3s; }
+  .skillCard:nth-child(5) { animation-delay: 0.4s; }
+  .skillCard:nth-child(6) { animation-delay: 0.5s; }
+  
+  
+  .cardHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .cardHeader h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #111827;
+  }
+  .dark .cardHeader h3 { color: #ffffff; }
+  
+  .cardIcon { color: #7C3AED; }
+  
+  /* ======== Progress Bars ======== */
+  .skillsList {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .skillItem {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .skillInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.875rem;
+  }
+  .skillInfo span:first-child {
+    font-weight: 500;
+    color: #374151;
+  }
+  .dark .skillInfo span:first-child { color: #D1D5DB; }
+  
+  .skillInfo span:last-child {
+    font-weight: 500;
+    color: #7C3AED;
+  }
+  .dark .skillInfo span:last-child { color: #A78BFA; }
+  
+  .progressBar {
+    width: 100%;
+    background-color: #E5E7EB;
+    border-radius: 9999px;
+    height: 0.5rem;
+    overflow: hidden; /* Important for the inner div's border-radius */
+  }
+  .dark .progressBar { background-color: #374151; }
+  
+  .progressBarFill {
+    background: linear-gradient(to right, #7C3AED, #9333EA);
+    height: 100%;
+    border-radius: 9999px;
+    /* Use a CSS variable set in the JSX style attribute */
+    animation: growProgressBar 1.5s 0.5s ease-out forwards;
+  }
+  
+  /* ======== Sub-sections (Additional & Soft Skills) ======== */
+  .subSection {
+    margin-top: 4rem;
+    animation: fadeInUp 0.5s ease-out forwards;
+  }
+  .subHeader {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .subHeader h3 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #111827;
+  }
+  .dark .subHeader h3 { color: #ffffff; }
+  
+  /* Additional Skills */
+  .tagsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+  .skillTag {
+    background-color: #EEF2FF;
+    color: #4338CA;
+    border-radius: 9999px;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+  .dark .skillTag { 
+    background-color: rgba(99, 102, 241, 0.2); 
+    color: #C7D2FE; 
+  }
+  .skillTag:hover {
+    background-color: #C7D2FE;
+    transform: translateY(-2px);
+  }
+  .dark .skillTag:hover {
+    background-color: rgba(99, 102, 241, 0.4);
+  }
+  
+  /* Soft Skills */
+  .softSkillsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  .softSkillCard {
+    background-color: #ffffff;
+    border: 1px solid #E5E7EB;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    transition: all 0.3s ease;
+  }
+  .dark .softSkillCard { 
+    background-color: #1F2937; 
+    border-color: #374151; 
+  }
+  .softSkillCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    border-color: #C4B5FD;
+  }
+  .dark .softSkillCard:hover { border-color: #7C3AED; }
+  .softSkillCard span {
+    font-weight: 500;
+    color: #374151;
+  }
+  .dark .softSkillCard span { color: #D1D5DB; }
+  
+  
+  /* --- Responsive Design --- */
+  @media (min-width: 640px) { /* sm */
+    .container { padding: 0 1.5rem; }
+    .sectionHeader h2 { font-size: 2.75rem; }
+    .skillsGrid { grid-template-columns: repeat(2, 1fr); }
+  }
+  
+  @media (min-width: 1024px) { /* lg */
+    .skillsSection { padding: 6rem 0; }
+    .container { padding: 0 2rem; }
+    .sectionHeader { margin-bottom: 5rem; }
+    .sectionHeader h2 { font-size: 3rem; }
+    .skillsGrid { grid-template-columns: repeat(3, 1fr); }
+  }

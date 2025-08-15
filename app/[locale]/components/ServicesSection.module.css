@@ -1,0 +1,255 @@
+/* ServicesSection.module.css */
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .servicesSection {
+    padding: 4rem 0;
+    background-color: #ffffff;
+  }
+  .dark .servicesSection { background-color: #111827; }
+  
+  .container {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  /* ======== Section Header ======== */
+  .sectionHeader {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeInUp 0.5s ease-out forwards;
+  }
+  .sectionHeader h2 {
+    font-size: 2.25rem; font-weight: 700; color: #111827; margin-bottom: 1rem;
+  }
+  .dark .sectionHeader h2 { color: #ffffff; }
+  
+  .sectionHeader p {
+    font-size: 1.125rem; color: #4B5563; max-width: 48rem; margin: 0 auto;
+  }
+  .dark .sectionHeader p { color: #D1D5DB; }
+  
+  .sectionHeader h3 { /* For sub-section headers */
+    font-size: 1.75rem; font-weight: 600; color: #111827; margin-bottom: 1rem;
+  }
+  .dark .sectionHeader h3 { color: #ffffff; }
+  
+  
+  /* ======== Services Grid ======== */
+  .servicesGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .serviceCard {
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    padding: 2rem;
+    border: 1px solid #E5E7EB;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.5s ease-out forwards;
+    opacity: 0;
+  }
+  .dark .serviceCard { background-color: #1F2937; border-color: #374151; }
+  
+  .serviceCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-color: #C4B5FD;
+  }
+  .dark .serviceCard:hover { border-color: #7C3AED; }
+  
+  .iconWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: #F5F3FF;
+    border-radius: 9999px;
+    margin-bottom: 1.5rem;
+    transition: background-color 0.3s ease;
+  }
+  .dark .iconWrapper { background-color: rgba(124, 58, 237, 0.1); }
+  
+  .serviceCard:hover .iconWrapper { background-color: #DDD6FE; }
+  .dark .serviceCard:hover .iconWrapper { background-color: rgba(124, 58, 237, 0.2); }
+  
+  .icon { color: #7C3AED; }
+  
+  .cardTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+  }
+  .dark .cardTitle { color: #ffffff; }
+  .serviceCard:hover .cardTitle { color: #7C3AED; }
+  .dark .serviceCard:hover .cardTitle { color: #A78BFA; }
+  
+  .cardDescription {
+    color: #4B5563;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+  .dark .cardDescription { color: #D1D5DB; }
+  
+  .featuresList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .featureItem {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: #4B5563;
+  }
+  .dark .featureItem { color: #9CA3AF; }
+  
+  .featureBullet {
+    width: 5px;
+    height: 5px;
+    background-color: #8B5CF6;
+    border-radius: 9999px;
+    flex-shrink: 0;
+  }
+  
+  .learnMoreLink {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: #7C3AED;
+    font-weight: 500;
+    transition: gap 0.3s ease;
+  }
+  .dark .learnMoreLink { color: #A78BFA; }
+  .serviceCard:hover .learnMoreLink { gap: 0.5rem; }
+  
+  .arrowIcon {
+    transition: transform 0.3s ease;
+  }
+  .serviceCard:hover .arrowIcon { transform: translateX(4px); }
+  
+  /* ======== Sub-sections (Process & CTA) ======== */
+  .subSection {
+    margin-top: 4rem;
+    animation: fadeInUp 0.5s ease-out forwards;
+  }
+  
+  /* Process Section */
+  .processGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .processStep {
+    text-align: center;
+  }
+  .stepNumber {
+    width: 4rem;
+    height: 4rem;
+    background: linear-gradient(to right, #7C3AED, #9333EA);
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin: 0 auto 1rem;
+  }
+  .processStep h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.5rem;
+  }
+  .dark .processStep h4 { color: #ffffff; }
+  
+  .processStep p {
+    color: #4B5563;
+    font-size: 0.875rem;
+  }
+  .dark .processStep p { color: #D1D5DB; }
+  
+  /* CTA Section */
+  .ctaCard {
+    background: linear-gradient(to right, #7C3AED, #9333EA);
+    border-radius: 1rem;
+    padding: 2.5rem;
+    text-align: center;
+    color: #ffffff;
+  }
+  .ctaCard h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .ctaCard p {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    max-width: 42rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .ctaButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    justify-content: center;
+  }
+  .btn {
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  .btnPrimary {
+    background-color: #ffffff;
+    color: #7C3AED;
+  }
+  .btnPrimary:hover { background-color: #F5F3FF; }
+  
+  .btnSecondary {
+    border: 2px solid #ffffff;
+    color: #ffffff;
+  }
+  .btnSecondary:hover {
+    background-color: #ffffff;
+    color: #7C3AED;
+  }
+  
+  
+  /* --- Responsive Design --- */
+  @media (min-width: 640px) { /* sm */
+    .container { padding: 0 1.5rem; }
+    .sectionHeader h2 { font-size: 2.75rem; }
+    .processGrid { grid-template-columns: repeat(2, 1fr); }
+    .ctaButtons { flex-direction: row; gap: 1rem; }
+    .ctaCard h3 { font-size: 2rem; }
+  }
+  
+  @media (min-width: 768px) { /* md */
+    .servicesGrid { grid-template-columns: repeat(2, 1fr); }
+    .processGrid { grid-template-columns: repeat(4, 1fr); }
+  }
+  
+  @media (min-width: 1024px) { /* lg */
+    .servicesSection { padding: 6rem 0; }
+    .container { padding: 0 2rem; }
+    .sectionHeader { margin-bottom: 5rem; }
+    .sectionHeader h2 { font-size: 3rem; }
+    .servicesGrid { grid-template-columns: repeat(3, 1fr); }
+  }

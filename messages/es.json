@@ -1,0 +1,137 @@
+{
+    "messages": {
+        "welcome": "bienvenido",
+        "goodbye": "adiós",
+        "thank_you": "gracias",
+        "yes": "sí",
+        "no": "no",
+        "please_wait": "por favor espera",
+        "error_occurred": "Ocurrió un error",
+        "loading": "Cargando...",
+        "success": "Éxito",
+        "failure": "Fallo"
+    },
+    "errors": {
+        "not_found": "No encontrado",
+        "unauthorized": "No autorizado",
+        "forbidden": "Prohibido",
+        "internal_server_error": "Error interno del servidor"
+    },
+    "hero": {
+        "title": "¡Hola! Soy Nyuysemo Carlglain Nyuykividzem",
+        "subtitle": "Ingeniero de Software & Desarrollador Full-Stack",
+        "description": "Soy un ingeniero de software apasionado especializado en desarrollo web y móvil. Actualmente haciendo prácticas en Nkwa, una empresa fintech en Buea, Camerún. Me encanta crear soluciones innovadoras que resuelven problemas reales y mejoran las experiencias de usuario.",
+        "button1": "Ver Mis Habilidades",
+        "button2": "Ver Mis Proyectos",
+        "button3": "Contáctame",
+        "button4": "Descargar CV",
+        "scroll_down": "Desplazarse hacia abajo"
+    },
+    "nav": {
+        "home": "Inicio",
+        "about": "Acerca de",
+        "skills": "Habilidades",
+        "services": "Servicios",
+        "projects": "Proyectos",
+        "contact": "Contacto"
+    },
+    "about": {
+        "title": "Acerca de Mí",
+        "subtitle": "Conóceme mejor",
+        "description": "Soy un ingeniero de software dedicado con pasión por la tecnología y la innovación. Actualmente cursando mi educación mientras adquiero experiencia práctica a través de mis prácticas en Nkwa, donde contribuyo a soluciones fintech que marcan la diferencia en la vida de las personas.",
+        "experience": "Experiencia",
+        "education": "Educación",
+        "internship_title": "Practicante de Ingeniería de Software",
+        "internship_company": "Nkwa - Empresa Fintech",
+        "internship_location": "Buea, Camerún",
+        "internship_period": "2024 - Presente",
+        "internship_description": "Trabajando en soluciones fintech innovadoras, desarrollando aplicaciones web y móviles, y contribuyendo a las iniciativas de transformación digital de la empresa.",
+        "download_cv": "Descargar CV",
+        "years_experience": "Años de Experiencia",
+        "projects_completed": "Proyectos Completados",
+        "happy_clients": "Clientes Satisfechos"
+    },
+    "skills": {
+        "title": "Mis Habilidades",
+        "subtitle": "Tecnologías con las que trabajo",
+        "frontend": "Desarrollo Frontend",
+        "backend": "Desarrollo Backend",
+        "mobile": "Desarrollo Móvil",
+        "tools": "Herramientas & Tecnologías",
+        "languages": "Lenguajes de Programación",
+        "frameworks": "Frameworks & Bibliotecas",
+        "databases": "Bases de Datos",
+        "cloud": "Cloud & DevOps"
+    },
+    "services": {
+        "title": "Servicios que Ofrezco",
+        "subtitle": "Lo que puedo hacer por ti",
+        "web_development": {
+            "title": "Desarrollo Web",
+            "description": "Creando aplicaciones web responsivas y modernas usando las últimas tecnologías y mejores prácticas."
+        },
+        "mobile_development": {
+            "title": "Desarrollo Móvil",
+            "description": "Construyendo aplicaciones móviles nativas y multiplataforma para iOS y Android."
+        },
+        "ui_ux_design": {
+            "title": "Diseño UI/UX",
+            "description": "Diseñando interfaces de usuario intuitivas y hermosas que mejoran la experiencia del usuario."
+        },
+        "api_development": {
+            "title": "Desarrollo de API",
+            "description": "Construyendo APIs RESTful robustas y escalables y microservicios."
+        },
+        "database_design": {
+            "title": "Diseño de Base de Datos",
+            "description": "Diseñando y optimizando esquemas de base de datos para un rendimiento óptimo."
+        },
+        "consulting": {
+            "title": "Consultoría Técnica",
+            "description": "Proporcionando asesoramiento experto sobre elecciones tecnológicas y decisiones de arquitectura."
+        }
+    },
+    "projects": {
+        "title": "Mis Proyectos",
+        "subtitle": "Algunos de mis trabajos recientes",
+        "view_project": "Ver Proyecto",
+        "view_code": "Ver Código",
+        "technologies_used": "Tecnologías Utilizadas"
+    },
+    "contact": {
+        "title": "Ponte en Contacto",
+        "subtitle": "Trabajemos juntos",
+        "form_title": "Envíame un mensaje",
+        "name": "Nombre",
+        "name_placeholder": "Tu nombre",
+        "email": "Email",
+        "email_placeholder": "tu.email@ejemplo.com",
+        "message": "Mensaje",
+        "message_placeholder": "Cuéntame sobre tu proyecto...",
+        "send_message": "Enviar Mensaje",
+        "contact_info": "Información de Contacto",
+        "email_title": "Email",
+        "location_title": "Ubicación",
+        "phone_title": "Teléfono",
+        "follow_me": "Sígueme",
+        "availability_title": "Disponibilidad Actual",
+        "availability_text": "Actualmente estoy disponible para trabajos freelance y oportunidades de tiempo completo. Estoy particularmente interesado en proyectos de desarrollo full-stack, desarrollo de aplicaciones móviles, consultoría técnica y contribuciones de código abierto."
+    },
+    "footer": {
+        "description": "Un ingeniero de software apasionado dedicado a crear soluciones innovadoras que marcan la diferencia en la vida de las personas a través de la tecnología.",
+        "quick_links": "Enlaces Rápidos",
+        "home": "Inicio",
+        "about": "Acerca de",
+        "skills": "Habilidades",
+        "projects": "Proyectos",
+        "contact": "Contacto",
+        "services": "Servicios",
+        "web_development": "Desarrollo Web",
+        "mobile_development": "Desarrollo Móvil",
+        "ui_ux_design": "Diseño UI/UX",
+        "consulting": "Consultoría Técnica",
+        "copyright": "Carlglain. Todos los derechos reservados.",
+        "privacy_policy": "Política de Privacidad",
+        "terms_of_service": "Términos de Servicio"
+    }
+}

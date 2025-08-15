@@ -1,0 +1,137 @@
+{
+    "messages": {
+        "welcome": "welcome",
+        "goodbye": "goodbye",
+        "thank_you": "thank you",
+        "yes": "yes",
+        "no": "no",
+        "please_wait": "please wait",
+        "error_occurred": "An error occurred",
+        "loading": "Loading...",
+        "success": "Success",
+        "failure": "Failure"
+    },
+    "errors": {
+        "not_found": "Not found",
+        "unauthorized": "Unauthorized",
+        "forbidden": "Forbidden",
+        "internal_server_error": "Internal server error"
+    },
+    "hero": {
+        "title": "Hi! I'm Nyuysemo Carlglain Nyuykividzem",
+        "subtitle": "Software Engineer & Full-Stack Developer",
+        "description": "I am a passionate software engineer specializing in web and mobile development. Currently interning at Nkwa, a fintech company in Buea, Cameroon. I love creating innovative solutions that solve real-world problems and enhance user experiences.",
+        "button1": "View My Skills",
+        "button2": "See My Projects",
+        "button3": "Contact Me",
+        "button4": "Download Resume",
+        "scroll_down": "Scroll Down"
+    },
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "skills": "Skills",
+        "services": "Services",
+        "projects": "Projects",
+        "contact": "Contact"
+    },
+    "about": {
+        "title": "About Me",
+        "subtitle": "Get to know me better",
+        "description": "I'm a dedicated software engineer with a passion for technology and innovation. Currently pursuing my education while gaining hands-on experience through my internship at Nkwa, where I'm contributing to fintech solutions that make a difference in people's lives.",
+        "experience": "Experience",
+        "education": "Education",
+        "internship_title": "Software Engineering Intern",
+        "internship_company": "Nkwa - Fintech Company",
+        "internship_location": "Buea, Cameroon",
+        "internship_period": "2024 - Present",
+        "internship_description": "Working on innovative fintech solutions, developing web and mobile applications, and contributing to the company's digital transformation initiatives.",
+        "download_cv": "Download CV",
+        "years_experience": "Years of Experience",
+        "projects_completed": "Projects Completed",
+        "happy_clients": "Happy Clients"
+    },
+    "skills": {
+        "title": "My Skills",
+        "subtitle": "Technologies I work with",
+        "frontend": "Frontend Development",
+        "backend": "Backend Development",
+        "mobile": "Mobile Development",
+        "tools": "Tools & Technologies",
+        "languages": "Programming Languages",
+        "frameworks": "Frameworks & Libraries",
+        "databases": "Databases",
+        "cloud": "Cloud & DevOps"
+    },
+    "services": {
+        "title": "Services I Offer",
+        "subtitle": "What I can do for you",
+        "web_development": {
+            "title": "Web Development",
+            "description": "Creating responsive, modern web applications using the latest technologies and best practices."
+        },
+        "mobile_development": {
+            "title": "Mobile Development",
+            "description": "Building native and cross-platform mobile applications for iOS and Android."
+        },
+        "ui_ux_design": {
+            "title": "UI/UX Design",
+            "description": "Designing intuitive and beautiful user interfaces that enhance user experience."
+        },
+        "api_development": {
+            "title": "API Development",
+            "description": "Building robust and scalable RESTful APIs and microservices."
+        },
+        "database_design": {
+            "title": "Database Design",
+            "description": "Designing and optimizing database schemas for optimal performance."
+        },
+        "consulting": {
+            "title": "Technical Consulting",
+            "description": "Providing expert advice on technology choices and architecture decisions."
+        }
+    },
+    "projects": {
+        "title": "My Projects",
+        "subtitle": "Some of my recent work",
+        "view_project": "View Project",
+        "view_code": "View Code",
+        "technologies_used": "Technologies Used"
+    },
+    "contact": {
+        "title": "Get In Touch",
+        "subtitle": "Let's work together",
+        "form_title": "Send me a message",
+        "name": "Name",
+        "name_placeholder": "Your name",
+        "email": "Email",
+        "email_placeholder": "your.email@example.com",
+        "message": "Message",
+        "message_placeholder": "Tell me about your project...",
+        "send_message": "Send Message",
+        "contact_info": "Contact Information",
+        "email_title": "Email",
+        "location_title": "Location",
+        "phone_title": "Phone",
+        "follow_me": "Follow Me",
+        "availability_title": "Current Availability",
+        "availability_text": "I'm currently available for freelance work and full-time opportunities. I'm particularly interested in full-stack development projects, mobile app development, technical consulting, and open source contributions."
+    },
+    "footer": {
+        "description": "A passionate software engineer dedicated to creating innovative solutions that make a difference in people's lives through technology.",
+        "quick_links": "Quick Links",
+        "home": "Home",
+        "about": "About",
+        "skills": "Skills",
+        "projects": "Projects",
+        "contact": "Contact",
+        "services": "Services",
+        "web_development": "Web Development",
+        "mobile_development": "Mobile Development",
+        "ui_ux_design": "UI/UX Design",
+        "consulting": "Technical Consulting",
+        "copyright": "Carlglain. All rights reserved.",
+        "privacy_policy": "Privacy Policy",
+        "terms_of_service": "Terms of Service"
+    }
+}

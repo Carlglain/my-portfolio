@@ -1,0 +1,226 @@
+/* AboutSection.module.css */
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .aboutSection {
+    padding: 4rem 0;
+    background-color: #ffffff;
+  }
+  .dark .aboutSection { background-color: #111827; }
+  
+  .container {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  /* ======== Section Header ======== */
+  .sectionHeader {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeInUp 0.5s ease-out forwards;
+  }
+  
+  .sectionHeader h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 1rem;
+  }
+  .dark .sectionHeader h2 { color: #ffffff; }
+  
+  .sectionHeader p {
+    font-size: 1.125rem;
+    color: #4B5563;
+    max-width: 48rem;
+    margin: 0 auto;
+  }
+  .dark .sectionHeader p { color: #D1D5DB; }
+  
+  /* ======== Main Layout ======== */
+  .gridContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .leftColumn, .rightColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    animation: fadeInUp 0.5s ease-out 0.2s forwards;
+    opacity: 0; /* Initially hidden for animation */
+  }
+  
+  /* ======== General Content Styling ======== */
+  .leftColumn h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #111827;
+  }
+  .dark .leftColumn h3 { color: #ffffff; }
+  
+  .infoBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .blockTitle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #111827;
+  }
+  .dark .blockTitle { color: #ffffff; }
+  
+  .titleIcon { color: #7C3AED; }
+  
+  .card {
+    background-color: #F9FAFB;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    border: 1px solid #F3F4F6;
+  }
+  .dark .card { background-color: #1F2937; border-color: #374151; }
+  
+  .cardHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .card h5 {
+    font-weight: 600;
+    color: #111827;
+  }
+  .dark .card h5 { color: #ffffff; }
+  
+  .companyName {
+    color: #7C3AED;
+    font-weight: 500;
+  }
+  .dark .companyName { color: #A78BFA; }
+  
+  .date, .location {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.875rem;
+    color: #4B5563;
+  }
+  .dark .date, .dark .location { color: #9CA3AF; }
+  
+  .cardDescription {
+    font-size: 0.9rem;
+    color: #374151;
+    line-height: 1.6;
+  }
+  .dark .cardDescription { color: #D1D5DB; }
+  
+  /* ======== Right Column Specifics ======== */
+  .statsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+  }
+  
+  .statCard {
+    background: linear-gradient(to bottom right, #F5F3FF, #EDE9FE);
+    border-radius: 0.5rem;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    border: 1px solid #DDD6FE;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .dark .statCard { 
+    background: linear-gradient(to bottom right, rgba(124, 58, 237, 0.1), rgba(147, 51, 234, 0.1));
+    border-color: #4C1D95;
+  }
+  .statCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  }
+  
+  .statNumber {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #7C3AED;
+    margin-bottom: 0.25rem;
+  }
+  .dark .statNumber { color: #A78BFA; }
+  
+  .statLabel {
+    font-size: 0.8rem;
+    color: #4B5563;
+  }
+  .dark .statLabel { color: #D1D5DB; }
+  
+  .skillsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .skillTag {
+    padding: 0.25rem 0.75rem;
+    background-color: #EEF2FF;
+    color: #4338CA;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  .dark .skillTag { background-color: rgba(99, 102, 241, 0.2); color: #C7D2FE; }
+  
+  .educationDate {
+    font-size: 0.875rem;
+    color: #4B5563;
+    margin-top: 0.25rem;
+  }
+  .dark .educationDate { color: #9CA3AF; }
+  
+  
+  /* ======== Button ======== */
+  .buttonContainer {
+    padding-top: 0.5rem;
+  }
+  .downloadButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(to right, #7C3AED, #9333EA);
+    color: white;
+    padding: 0.6rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+  }
+  .downloadButton:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  }
+  
+  /* --- Responsive Design --- */
+  @media (min-width: 640px) { /* sm */
+    .aboutSection { padding: 5rem 0; }
+    .container { padding: 0 1.5rem; }
+    .sectionHeader { margin-bottom: 4rem; }
+    .sectionHeader h2 { font-size: 2.75rem; }
+    .cardHeader { flex-direction: row; align-items: flex-start; }
+  }
+  
+  @media (min-width: 1024px) { /* lg */
+    .aboutSection { padding: 6rem 0; }
+    .container { padding: 0 2rem; }
+    .sectionHeader { margin-bottom: 5rem; }
+    .sectionHeader h2 { font-size: 3rem; }
+    .gridContainer { grid-template-columns: 1fr 1fr; gap: 3rem; }
+  }
