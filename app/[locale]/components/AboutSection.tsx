@@ -102,7 +102,7 @@ const AboutSection = () => {
               <div className={styles.card}>
                 <h5>Bachelor&apos;s in Computer Engineering</h5>
                 <p className={styles.companyName}>University of Buea</p>
-                <p className={styles.educationDate}>2020 - 2024</p>
+                <p className={styles.educationDate}>2022 - 2026</p>
               </div>
             </div>
           </div>
