@@ -33,21 +33,20 @@ const SkillsSection = () => {
       title: t('frameworks'),
       icon: <Globe />,
       skills: [
-        { name: 'React', level: 90 },
-        { name: 'Next.js', level: 85 },
-        { name: 'Node.js', level: 80 },
-        { name: 'Express.js', level: 85 },
-        { name: 'Django', level: 75 },
+        { name: 'React', level: 75 },
+        { name: 'Next.js', level: 70 },
+        { name: 'Node.js', level: 50 },
+        { name: 'Express.js', level: 60 },
+        
       ]
     },
     {
       title: t('databases'),
       icon: <Database />,
       skills: [
-        { name: 'MongoDB', level: 85 },
-        { name: 'PostgreSQL', level: 80 },
+        { name: 'MongoDB', level: 60 },
+        { name: 'PostgreSQL', level: 50 },
         { name: 'MySQL', level: 75 },
-        { name: 'Redis', level: 70 },
         { name: 'Firebase', level: 80 },
       ]
     },
@@ -55,19 +54,14 @@ const SkillsSection = () => {
       title: t('mobile'),
       icon: <Smartphone />,
       skills: [
-        { name: 'React Native', level: 80 },
-        { name: 'Flutter', level: 75 },
-        { name: 'Android (Kotlin)', level: 70 },
-        { name: 'iOS (Swift)', level: 65 },
+        { name: 'React Native', level: 50 },
+        {name:'Expo', level:50}
       ]
     },
     {
       title: t('cloud'),
       icon: <Cloud />,
       skills: [
-        { name: 'AWS', level: 75 },
-        { name: 'Docker', level: 80 },
-        { name: 'Kubernetes', level: 65 },
         { name: 'CI/CD', level: 80 },
         { name: 'Vercel', level: 85 },
       ]
@@ -81,15 +75,15 @@ const SkillsSection = () => {
         { name: 'Figma', level: 70 },
         { name: 'Postman', level: 85 },
         { name: 'Jira', level: 75 },
+        {name:'ClickUp',level:80}
       ]
     }
   ];
 
   const additionalSkills = [
-    'HTML5', 'CSS3', 'SASS', 'Tailwind CSS', 'Bootstrap', 'Material-UI',
-    'Redux', 'Context API', 'GraphQL', 'REST APIs', 'JWT', 'OAuth',
-    'Jest', 'Cypress', 'Testing Library', 'Storybook', 'Webpack', 'Vite',
-    'Linux', 'Nginx', 'PM2', 'MongoDB Atlas', 'AWS S3', 'CloudFront'
+    'HTML5', 'CSS3','Tailwind CSS', 'Bootstrap', 'Material-UI',
+    'Zustand', 'Context API',  'REST APIs', 'Testing Library', 'Vite',
+    'Linux', 'MongoDB Atlas','Postman','Expo Go'
   ];
 
   const softSkills = [
@@ -98,8 +92,6 @@ const SkillsSection = () => {
     { skill: 'Communication', icon: <Globe /> },
     { skill: 'Security Awareness', icon: <Shield /> }
   ];
-
-  // --- JSX Structure ---
 
   return (
     <section id="skills" className={styles.skillsSection}>
@@ -116,7 +108,6 @@ const SkillsSection = () => {
           {skillCategories.map((category, categoryIndex) => (
             <div key={categoryIndex} className={styles.skillCard}>
               <div className={styles.cardHeader}>
-                {/* Clone icon to apply styles */}
                 {React.cloneElement(category.icon, { size: 32, className: styles.cardIcon })}
                 <h3>{category.title}</h3>
               </div>

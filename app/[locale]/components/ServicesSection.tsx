@@ -37,13 +37,13 @@ const ServicesSection = () => {
       icon: <Code />,
       title: t('api_development.title'),
       description: t('api_development.description'),
-      features: ['RESTful APIs', 'GraphQL', 'Authentication', 'Documentation']
+      features: ['RESTful APIs', 'Authentication', 'Documentation']
     },
     {
       icon: <Database />,
       title: t('database_design.title'),
       description: t('database_design.description'),
-      features: ['Schema Design', 'Performance Tuning', 'Data Migration', 'Backup Strategies']
+      features: ['Schema Design',  'Backup Strategies']
     },
     {
       icon: <Lightbulb />,
