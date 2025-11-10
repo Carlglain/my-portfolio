@@ -62,7 +62,7 @@ const SkillsSection = () => {
       title: t('cloud'),
       icon: <Cloud />,
       skills: [
-        { name: 'CI/CD', level: 80 },
+        { name: 'Cloudinary', level: 60 },
         { name: 'Vercel', level: 85 },
       ]
     },

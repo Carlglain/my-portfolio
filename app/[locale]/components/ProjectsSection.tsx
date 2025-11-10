@@ -58,7 +58,7 @@ const ProjectsSection = () => {
     {
       title: "Medi-Finder",
       description: "A site that permits users to search for medical facilities and hospitals in their area.",
-      image: "/work-2.png",
+      image: "/work-3.png",
       technologies: ["React.js", "MongoDB", "Markdown", "Vercel"],
       liveUrl: "https://medi-finder-orcin.vercel.app/",
       githubUrl: "https://github.com/Carlglain/Medi-Finder",
