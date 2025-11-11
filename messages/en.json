@@ -84,11 +84,11 @@
         },
         "database_design": {
             "title": "Database Design",
-            "description": "Designing and optimizing database schemas for optimal performance."
+            "description": "Designing and optimizing database schemas."
         },
         "consulting": {
             "title": "Technical Consulting",
-            "description": "Providing expert advice on technology choices and architecture decisions."
+            "description": "Providing advice on technology choices and architecture decisions."
         }
     },
     "projects": {
@@ -115,7 +115,7 @@
         "phone_title": "Phone",
         "follow_me": "Follow Me",
         "availability_title": "Current Availability",
-        "availability_text": "I'm currently available for freelance work and full-time opportunities. I'm particularly interested in full-stack development projects, mobile app development, technical consulting, and open source contributions."
+        "availability_text": "I'm currently available for freelance work, full-time opportunities and Internships. I'm particularly interested in full-stack development projects, mobile app development, technical consulting, and open source contributions."
     },
     "footer": {
         "description": "A passionate software engineer dedicated to creating innovative solutions that make a difference in people's lives through technology.",

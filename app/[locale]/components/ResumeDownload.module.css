@@ -1,91 +1,85 @@
 /* ResumeDownload.module.css */
 
 @keyframes bounceIcon {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-25%);
-    }
+  0%, 100% {
+    transform: translateY(0);
   }
-  
-/* Find the .container rule and remove margin-top */
+  50% {
+    transform: translateY(-25%);
+  }
+}
 
 .container {
-    display: flex;
-    flex-direction: column; 
-    align-items: flex-start;
-    justify-content: center;
-    gap: 0.5rem;
-    /* margin-top: 2.5rem;  <-- REMOVE THIS LINE */
+  display: flex;
+  flex-direction: row; 
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* Base styles for both buttons */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem; /* gap-2 */
+  padding: 0.75rem 1.5rem; 
+  border-radius: 9999px; /* rounded-full */
+  font-weight: 500; /* font-medium */
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* shadow-lg */
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.btn:hover {
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); /* hover:shadow-xl */
+  transform: scale(1.05);
+}
+
+/* Specific styles for the "Contact Me" button */
+.contactBtn {
+  background: linear-gradient(to right, #7C3AED, #9333EA); /* from-violet-600 to-purple-600 */
+  color: white;
+}
+
+.contactBtn:hover {
+  background: linear-gradient(to right, #6D28D9, #7E22CE); /* hover:from-violet-700 hover:to-purple-700 */
+}
+
+/* Specific styles for the "Download Resume" button */
+.resumeBtn {
+  background-color: #ffffff;
+  color: #111827;
+  border: 2px solid #7C3AED;
+}
+
+/* Dark mode styles for the resume button */
+.dark .resumeBtn {
+  background-color: #1F2937; /* dark:bg-gray-800 */
+  color: #ffffff; /* dark:text-white */
+  border-color: #A78BFA; /* dark:border-violet-400 */
+}
+
+.resumeBtn:hover {
+  background-color: #7C3AED;
+  color: #ffffff;
+}
+
+/* Dark mode hover for resume button */
+.dark .resumeBtn:hover {
+  background-color: #7C3AED; /* dark:hover:bg-violet-600 */
+}
+
+/* Animation for the download icon */
+.resumeBtn:hover .downloadIcon {
+  animation: bounceIcon 1s ease infinite;
+}
+
+/* --- Responsive Design --- */
+@media (min-width: 640px) { /* sm breakpoint */
+  .container {
+    gap: 1rem;
   }
-  
-  /* Base styles for both buttons */
-  .btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem; /* gap-2 */
-    padding: 0.75rem 1.5rem; 
-    border-radius: 9999px; /* rounded-full */
-    font-weight: 500; /* font-medium */
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* shadow-lg */
-    transition: all 0.3s ease;
-    width: 100%; /* Make buttons take full width on mobile */
-    max-width: 280px; /* Optional: prevent buttons from being too wide */
-  }
-  
-  .btn:hover {
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); /* hover:shadow-xl */
-    transform: scale(1.05);
-  }
-  
-  /* Specific styles for the "Contact Me" button */
-  .contactBtn {
-    background: linear-gradient(to right, #7C3AED, #9333EA); /* from-violet-600 to-purple-600 */
-    color: white;
-  }
-  
-  .contactBtn:hover {
-    background: linear-gradient(to right, #6D28D9, #7E22CE); /* hover:from-violet-700 hover:to-purple-700 */
-  }
-  
-  /* Specific styles for the "Download Resume" button */
-  .resumeBtn {
-    background-color: #ffffff;
-    color: #111827;
-    border: 2px solid #7C3AED;
-  }
-  
-  /* Dark mode styles for the resume button */
-  .dark .resumeBtn {
-    background-color: #1F2937; /* dark:bg-gray-800 */
-    color: #ffffff; /* dark:text-white */
-    border-color: #A78BFA; /* dark:border-violet-400 */
-  }
-  
-  .resumeBtn:hover {
-    background-color: #7C3AED;
-    color: #ffffff;
-  }
-  
-  /* Dark mode hover for resume button */
-  .dark .resumeBtn:hover {
-    background-color: #7C3AED; /* dark:hover:bg-violet-600 */
-  }
-  
-  /* Animation for the download icon */
-  .resumeBtn:hover .downloadIcon {
-    animation: bounceIcon 1s ease infinite;
-  }
-  
-  /* --- Responsive Design --- */
-  @media (min-width: 640px) { /* sm breakpoint */
-    .container {
-      flex-direction: row; /* Switch to row layout */
-    }
-  
-    .btn {
-      width: auto; /* Allow buttons to size to their content */
-    }
-  }
+}

@@ -8,19 +8,17 @@ import Me0 from '@/assets/me0.jpg';
 import ResumeDownload from './ResumeDownload';
 import { useTranslations } from 'next-intl';
 import { ChevronDown, Mail, Github, Linkedin } from 'lucide-react';
-import styles from './HeroSection.module.css'; // Import the CSS module
+import styles from './HeroSection.module.css';
 
 const HeroSection = () => {
   const t = useTranslations('hero');
 
-  // ✅ Typed social links
   const socialLinks: { icon: React.ElementType; href: string }[] = [
     { icon: Mail, href: 'mailto:carlglain@example.com' },
     { icon: Github, href: 'https://github.com/carlglain' },
     { icon: Linkedin, href: 'https://www.linkedin.com/in/nyuysemo-calglain-ab2a60221' },
   ];
 
-  // ✅ Fixed Variants typing
   const containerVariants: Variants = {
     hidden: {},
     show: {
@@ -112,37 +110,40 @@ const HeroSection = () => {
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: [0.6, -0.05, 0.01, 0.99] }}
           >
-            <motion.div 
-              className={styles.imageWrapper}
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-            >
+            <div className={styles.imageColumn}>
               <motion.div 
-                className={styles.backgroundShape1}
-                initial={{ scale: 0, rotate: -180 }}
-                animate={{ scale: 1, rotate: 0 }}
-                transition={{ duration: 1, delay: 0.6, ease: [0.6, -0.05, 0.01, 0.99] }}
-              ></motion.div>
-              <motion.div 
-                className={styles.backgroundShape2}
-                initial={{ scale: 0, rotate: 180 }}
-                animate={{ scale: 1, rotate: 0 }}
-                transition={{ duration: 1, delay: 0.8, ease: [0.6, -0.05, 0.01, 0.99] }}
-              ></motion.div>
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 1 }}
-                style={{ position: 'relative', width: '100%', height: '100%' }}
+                className={styles.imageWrapper}
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
               >
-                <Image
-                  src={Me0}
-                  alt="Carlglain Nyuykividzem"
-                  className={styles.profileImage}
-                  fill
-                  priority
-                />
+                <motion.div 
+                  className={styles.backgroundShape1}
+                  initial={{ scale: 0, rotate: -180 }}
+                  animate={{ scale: 1, rotate: 0 }}
+                  transition={{ duration: 1, delay: 0.6, ease: [0.6, -0.05, 0.01, 0.99] }}
+                ></motion.div>
+                <motion.div 
+                  className={styles.backgroundShape2}
+                  initial={{ scale: 0, rotate: 180 }}
+                  animate={{ scale: 1, rotate: 0 }}
+                  transition={{ duration: 1, delay: 0.8, ease: [0.6, -0.05, 0.01, 0.99] }}
+                ></motion.div>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 1 }}
+                  className={styles.imageInner}
+                >
+                  <Image
+                    src={Me0}
+                    alt="Carlglain Nyuykividzem"
+                    className={styles.profileImage}
+                    fill
+                    priority
+                  />
+                </motion.div>
               </motion.div>
+              
               <motion.div 
                 className={styles.resumeDownload}
                 initial={{ opacity: 0, y: 20 }}
@@ -151,7 +152,7 @@ const HeroSection = () => {
               >
                 <ResumeDownload />
               </motion.div>
-            </motion.div>
+            </div>
           </motion.div>
         </motion.div>
 
