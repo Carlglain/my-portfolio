@@ -1,8 +1,10 @@
+"use client";
 import React from 'react';
 import { useTranslations } from 'next-intl';
 import { ExternalLink, Github, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import styles from './ProjectsSection.module.css'; // Make sure this path is correct
+import { motion } from 'framer-motion';
 
 const ProjectsSection = () => {
   const t = useTranslations('projects');
@@ -69,22 +71,44 @@ const ProjectsSection = () => {
   const featuredProjects = projects.filter(p => p.featured);
   const otherProjects = projects.filter(p => !p.featured);
 
+  const containerVariants = {
+    initial: {},
+    animate: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } }
+  };
+
+  const cardVariants = {
+    initial: { opacity: 0, y: 24 },
+    animate: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+  };
+
   return (
     <section id="projects" className={styles.projectsSection}>
       <div className={styles.container}>
         
         {/* ======== Section Header ======== */}
-        <div className={styles.sectionHeader}>
+        <motion.div 
+          className={styles.sectionHeader}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.6 }}
+        >
           <h2>{t('title')}</h2>
           <p>{t('subtitle')}</p>
-        </div>
+        </motion.div>
 
         {/* ======== Featured Projects ======== */}
-        <div className={styles.subSection}>
+        <motion.div className={styles.subSection} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
           <h3 className={styles.subHeader}>Featured Projects</h3>
-          <div className={styles.featuredGrid}>
+          <motion.div 
+            className={styles.featuredGrid}
+            variants={containerVariants}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, margin: '-60px' }}
+          >
             {featuredProjects.map((project, index) => (
-              <div key={index} className={`${styles.projectCard} ${styles.featuredCard}`}>
+              <motion.div key={index} className={`${styles.projectCard} ${styles.featuredCard}`} variants={cardVariants} whileHover={{ y: -8 }} transition={{ duration: 0.25 }}>
                 <div className={styles.cardImageWrapper}>
                   <Image 
                     src={project.image} 
@@ -92,33 +116,33 @@ const ProjectsSection = () => {
                     fill
                     className={styles.cardImage}
                   />
-                  <div className={styles.imageOverlay}>
+                  <motion.div className={styles.imageOverlay} initial={{ opacity: 0 }} whileHover={{ opacity: 1 }} transition={{ duration: 0.2 }}>
                     <div className={styles.overlayLinks}>
                       <a href={project.liveUrl} target="_blank" rel="noopener noreferrer"><ExternalLink size={24} /></a>
                       <a href={project.githubUrl} target="_blank" rel="noopener noreferrer"><Github size={24} /></a>
                     </div>
-                  </div>
+                  </motion.div>
                 </div>
                 <div className={styles.cardContent}>
                   <h4>{project.title}</h4>
                   <p>{project.description}</p>
                   <div className={styles.tagsContainer}>
                     {project.technologies.map((tech) => (
-                      <span key={tech} className={styles.techTag}>{tech}</span>
+                      <motion.span key={tech} className={styles.techTag} whileHover={{ y: -3, scale: 1.05 }} transition={{ duration: 0.15 }}>{tech}</motion.span>
                     ))}
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* ======== Other Projects ======== */}
-        <div className={styles.subSection}>
+        <motion.div className={styles.subSection} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
           <h3 className={styles.subHeader}>Other Projects</h3>
-          <div className={styles.otherGrid}>
+          <motion.div className={styles.otherGrid} variants={containerVariants} initial="initial" whileInView="animate" viewport={{ once: true, margin: '-60px' }}>
             {otherProjects.map((project, index) => (
-              <div key={index} className={styles.projectCard}>
+              <motion.div key={index} className={styles.projectCard} variants={cardVariants} whileHover={{ y: -6 }} transition={{ duration: 0.2 }}>
                 <div className={styles.cardImageWrapper}>
                    <Image 
                     src={project.image} 
@@ -126,39 +150,39 @@ const ProjectsSection = () => {
                     fill
                     className={styles.cardImage}
                   />
-                  <div className={styles.imageOverlay}>
+                  <motion.div className={styles.imageOverlay} initial={{ opacity: 0 }} whileHover={{ opacity: 1 }} transition={{ duration: 0.2 }}>
                     <div className={styles.overlayLinks}>
                       <a href={project.liveUrl} target="_blank" rel="noopener noreferrer"><ExternalLink size={20} /></a>
                       <a href={project.githubUrl} target="_blank" rel="noopener noreferrer"><Github size={20} /></a>
                     </div>
-                  </div>
+                  </motion.div>
                 </div>
                 <div className={styles.cardContent}>
                   <h4>{project.title}</h4>
                   <div className={styles.tagsContainer}>
                     {project.technologies.slice(0, 3).map((tech) => (
-                      <span key={tech} className={styles.techTag}>{tech}</span>
+                      <motion.span key={tech} className={styles.techTag} whileHover={{ y: -3, scale: 1.05 }} transition={{ duration: 0.15 }}>{tech}</motion.span>
                     ))}
                     {project.technologies.length > 3 && (
                       <span className={styles.techTagMore}>+{project.technologies.length - 3}</span>
                     )}
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* ======== CTA Section ======== */}
-        <div className={`${styles.subSection} ${styles.ctaSection}`}>
-          <div className={styles.ctaCard}>
+        <motion.div className={`${styles.subSection} ${styles.ctaSection}`} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+          <motion.div className={styles.ctaCard} whileHover={{ y: -6 }} transition={{ duration: 0.2 }}>
             <h3>Have a Project in Mind?</h3>
             <p>I&apos;m always excited to work on new and challenging projects. Let&apos;s discuss how we can bring your ideas to life!</p>
-            <a href="#contact" className={styles.ctaButton}>
+            <motion.a href="#contact" className={styles.ctaButton} whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}>
               Let&apos;s Talk <ArrowRight size={20} />
-            </a>
-          </div>
-        </div>
+            </motion.a>
+          </motion.div>
+        </motion.div>
 
       </div>
     </section>

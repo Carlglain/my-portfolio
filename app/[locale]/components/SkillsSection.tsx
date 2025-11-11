@@ -1,4 +1,6 @@
+"use client";
 import React from 'react';
+import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { 
   Code, 
@@ -93,73 +95,134 @@ const SkillsSection = () => {
     { skill: 'Security Awareness', icon: <Shield /> }
   ];
 
+  const containerVariants = {
+    initial: {},
+    animate: {
+      transition: { staggerChildren: 0.1, delayChildren: 0.1 }
+    }
+  };
+
+  const cardVariants = {
+    initial: { opacity: 0, y: 24 },
+    animate: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+  };
+
+  const itemVariants = {
+    initial: { opacity: 0, y: 12 },
+    animate: { opacity: 1, y: 0, transition: { duration: 0.4 } }
+  };
+
   return (
     <section id="skills" className={styles.skillsSection}>
       <div className={styles.container}>
         
         {/* ======== Section Header ======== */}
-        <div className={styles.sectionHeader}>
+        <motion.div 
+          className={styles.sectionHeader}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.6 }}
+        >
           <h2>{t('title')}</h2>
           <p>{t('subtitle')}</p>
-        </div>
+        </motion.div>
 
         {/* ======== Main Skills Grid ======== */}
-        <div className={styles.skillsGrid}>
+        <motion.div 
+          className={styles.skillsGrid}
+          variants={containerVariants}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, margin: '-60px' }}
+        >
           {skillCategories.map((category, categoryIndex) => (
-            <div key={categoryIndex} className={styles.skillCard}>
+            <motion.div 
+              key={categoryIndex} 
+              className={styles.skillCard}
+              variants={cardVariants}
+              whileHover={{ y: -6 }}
+              transition={{ duration: 0.2 }}
+            >
               <div className={styles.cardHeader}>
                 {React.cloneElement(category.icon, { size: 32, className: styles.cardIcon })}
                 <h3>{category.title}</h3>
               </div>
-              <div className={styles.skillsList}>
+              <motion.div className={styles.skillsList} variants={containerVariants}>
                 {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex} className={styles.skillItem}>
+                  <motion.div key={skillIndex} className={styles.skillItem} variants={itemVariants}>
                     <div className={styles.skillInfo}>
                       <span>{skill.name}</span>
                       <span>{skill.level}%</span>
                     </div>
                     <div className={styles.progressBar}>
-                      <div 
+                      <motion.div
                         className={styles.progressBarFill}
-                        // Set CSS variable for the animation
-                        style={{ '--skill-level': `${skill.level}%` } as React.CSSProperties} 
-                      ></div>
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${skill.level}%` }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, ease: [0.6, -0.05, 0.01, 0.99] }}
+                      />
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* ======== Additional Skills ======== */}
-        <div className={styles.subSection}>
+        <motion.div 
+          className={styles.subSection}
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
           <div className={styles.subHeader}>
             <h3>Additional Skills & Technologies</h3>
           </div>
-          <div className={styles.tagsContainer}>
+          <motion.div className={styles.tagsContainer} variants={containerVariants} initial="initial" whileInView="animate" viewport={{ once: true }}>
             {additionalSkills.map((skill, index) => (
-              <span key={index} className={styles.skillTag}>
+              <motion.span 
+                key={index} 
+                className={styles.skillTag}
+                variants={itemVariants}
+                whileHover={{ scale: 1.06, y: -2 }}
+                transition={{ duration: 0.15 }}
+              >
                 {skill}
-              </span>
+              </motion.span>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* ======== Soft Skills ======== */}
-        <div className={styles.subSection}>
+        <motion.div 
+          className={styles.subSection}
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
           <div className={styles.subHeader}>
             <h3>Soft Skills</h3>
           </div>
-          <div className={styles.softSkillsGrid}>
+          <motion.div className={styles.softSkillsGrid} variants={containerVariants} initial="initial" whileInView="animate" viewport={{ once: true }}>
             {softSkills.map((item, index) => (
-              <div key={index} className={styles.softSkillCard}>
+              <motion.div 
+                key={index} 
+                className={styles.softSkillCard}
+                variants={itemVariants}
+                whileHover={{ y: -4, scale: 1.03 }}
+                transition={{ duration: 0.2 }}
+              >
                 {React.cloneElement(item.icon, { size: 28, className: styles.cardIcon })}
                 <span>{item.skill}</span>
-              </div>
+              </motion.div>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
         
       </div>
     </section>

@@ -1,5 +1,7 @@
+"use client";
 import React from 'react';
 import { useTranslations } from 'next-intl';
+import { motion } from 'framer-motion';
 import { 
   Globe, 
   Smartphone, 
@@ -60,73 +62,101 @@ const ServicesSection = () => {
     { step: '04', title: 'Deployment', description: 'Launching and maintaining your application' }
   ];
 
+  const containerVariants = {
+    initial: {},
+    animate: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } }
+  };
+
+  const cardVariants = {
+    initial: { opacity: 0, y: 24 },
+    animate: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+  };
+
   return (
     <section id="services" className={styles.servicesSection}>
       <div className={styles.container}>
         
         {/* ======== Section Header ======== */}
-        <div className={styles.sectionHeader}>
+        <motion.div 
+          className={styles.sectionHeader}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.6 }}
+        >
           <h2>{t('title')}</h2>
           <p>{t('subtitle')}</p>
-        </div>
+        </motion.div>
 
         {/* ======== Services Grid ======== */}
-        <div className={styles.servicesGrid}>
+        <motion.div 
+          className={styles.servicesGrid}
+          variants={containerVariants}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, margin: '-60px' }}
+        >
           {services.map((service, index) => (
-            <div key={index} className={styles.serviceCard}>
-              <div className={styles.iconWrapper}>
+            <motion.div 
+              key={index} 
+              className={styles.serviceCard}
+              variants={cardVariants}
+              whileHover={{ y: -8 }}
+              transition={{ duration: 0.25 }}
+            >
+              <motion.div className={styles.iconWrapper} initial={{ scale: 0.8, opacity: 0 }} whileInView={{ scale: 1, opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.4 }}>
                 {React.cloneElement(service.icon, { size: 36, className: styles.icon })}
-              </div>
+              </motion.div>
               <h3 className={styles.cardTitle}>{service.title}</h3>
               <p className={styles.cardDescription}>{service.description}</p>
               <ul className={styles.featuresList}>
                 {service.features.map((feature, i) => (
-                  <li key={i} className={styles.featureItem}>
+                  <motion.li key={i} className={styles.featureItem} initial={{ opacity: 0, x: -12 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.35, delay: i * 0.05 }}>
                     <div className={styles.featureBullet}></div>
                     {feature}
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
-              <a href="#contact" className={styles.learnMoreLink}>
+              <motion.a href="#contact" className={styles.learnMoreLink} whileHover={{ x: 4 }} transition={{ duration: 0.15 }}>
                 <span>Learn More</span>
                 <ArrowRight size={20} className={styles.arrowIcon} />
-              </a>
-            </div>
+              </motion.a>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* ======== Process Section ======== */}
-        <div className={styles.subSection}>
+        <motion.div className={styles.subSection} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
           <div className={styles.sectionHeader}>
             <h3>My Development Process</h3>
             <p>I follow a systematic approach to deliver high-quality solutions that meet your needs.</p>
           </div>
-          <div className={styles.processGrid}>
+          <motion.div className={styles.processGrid} variants={containerVariants} initial="initial" whileInView="animate" viewport={{ once: true }}>
             {processSteps.map((process, index) => (
-              <div key={index} className={styles.processStep}>
+              <motion.div key={index} className={styles.processStep} variants={cardVariants}>
                 <div className={styles.stepNumber}>{process.step}</div>
                 <h4>{process.title}</h4>
                 <p>{process.description}</p>
-              </div>
+              </motion.div>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* ======== CTA Section ======== */}
-        <div className={styles.subSection}>
-          <div className={styles.ctaCard}>
+        <motion.div className={styles.subSection} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+          <motion.div className={styles.ctaCard} whileHover={{ y: -6 }} transition={{ duration: 0.2 }}>
             <h3>Ready to Start Your Project?</h3>
             <p>Let&apos;s discuss how I can help bring your ideas to life with cutting-edge technology and innovative solutions.</p>
             <div className={styles.ctaButtons}>
-              <a href="#contact" className={`${styles.btn} ${styles.btnPrimary}`}>
+              <motion.a href="#contact" className={`${styles.btn} ${styles.btnPrimary}`} whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
                 Get Started
-              </a>
-              <a href="#projects" className={`${styles.btn} ${styles.btnSecondary}`}>
+              </motion.a>
+              <motion.a href="#projects" className={`${styles.btn} ${styles.btnSecondary}`} whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
                 View My Work
-              </a>
+              </motion.a>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
         
       </div>
     </section>

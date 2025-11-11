@@ -1,5 +1,6 @@
-'use client'
+"use client"
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { Mail, MapPin, Phone, Send, Github, Linkedin, Twitter, MessageSquare } from 'lucide-react';
 import styles from './ContactSection.module.css'; // Make sure this path is correct
@@ -40,24 +41,40 @@ const ContactSection = () => {
     { href: "mailto:carlglain@example.com", icon: <MessageSquare /> }
   ];
 
+  const containerVariants = {
+    initial: {},
+    animate: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } }
+  };
+
+  const itemVariants = {
+    initial: { opacity: 0, y: 16 },
+    animate: { opacity: 1, y: 0, transition: { duration: 0.45 } }
+  };
+
   return (
     <section id="contact" className={styles.contactSection}>
       <div className={styles.container}>
         
         {/* ======== Section Header ======== */}
-        <div className={styles.sectionHeader}>
+        <motion.div 
+          className={styles.sectionHeader}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.6 }}
+        >
           <h2>{t('title')}</h2>
           <p>{t('subtitle')}</p>
-        </div>
+        </motion.div>
 
         {/* ======== Main Content Grid ======== */}
-        <div className={styles.gridContainer}>
+        <motion.div className={styles.gridContainer} variants={containerVariants} initial="initial" whileInView="animate" viewport={{ once: true, margin: '-60px' }}>
           
           {/* ======== Left Column: Contact Form ======== */}
-          <div className={styles.formCard}>
+          <motion.div className={styles.formCard} variants={itemVariants}>
             <h3>{t('form_title')}</h3>
             <form onSubmit={handleSubmit} className={styles.form}>
-              <div className={styles.formGroup}>
+              <motion.div className={styles.formGroup} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.35 }}>
                 <label htmlFor="name">{t('name')}</label>
                 <input
                   type="text" id="name" name="name"
@@ -66,8 +83,8 @@ const ContactSection = () => {
                   className={styles.formInput}
                   placeholder={t('name_placeholder')}
                 />
-              </div>
-              <div className={styles.formGroup}>
+              </motion.div>
+              <motion.div className={styles.formGroup} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.35, delay: 0.05 }}>
                 <label htmlFor="email">{t('email')}</label>
                 <input
                   type="email" id="email" name="email"
@@ -76,8 +93,8 @@ const ContactSection = () => {
                   className={styles.formInput}
                   placeholder={t('email_placeholder')}
                 />
-              </div>
-              <div className={styles.formGroup}>
+              </motion.div>
+              <motion.div className={styles.formGroup} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.35, delay: 0.1 }}>
                 <label htmlFor="message">{t('message')}</label>
                 <textarea
                   id="message" name="message"
@@ -87,23 +104,23 @@ const ContactSection = () => {
                   className={styles.formTextarea}
                   placeholder={t('message_placeholder')}
                 />
-              </div>
-              <button type="submit" className={styles.submitButton}>
+              </motion.div>
+              <motion.button type="submit" className={styles.submitButton} whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
                 <Send size={20} />
                 {t('send_message')}
-              </button>
+              </motion.button>
             </form>
-          </div>
+          </motion.div>
 
           {/* ======== Right Column: Contact Info ======== */}
-          <div className={styles.infoColumn}>
+          <motion.div className={styles.infoColumn} variants={itemVariants}>
             
             {/* --- Contact Details --- */}
-            <div className={styles.infoBlock}>
+            <motion.div className={styles.infoBlock} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }}>
               <h3>{t('contact_info')}</h3>
               <div className={styles.detailsList}>
                 {contactInfo.map((item, index) => (
-                  <div key={index} className={styles.detailItem}>
+                  <motion.div key={index} className={styles.detailItem} initial={{ opacity: 0, x: -12 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.35, delay: index * 0.05 }}>
                     <div className={styles.iconWrapper}>
                       {React.cloneElement(item.icon, { size: 24, className: styles.icon })}
                     </div>
@@ -111,30 +128,30 @@ const ContactSection = () => {
                       <h4>{item.title}</h4>
                       <p>{item.value}</p>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
-            </div>
+            </motion.div>
 
             {/* --- Social Links --- */}
-            <div className={styles.infoBlock}>
+            <motion.div className={styles.infoBlock} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }}>
               <h3>{t('follow_me')}</h3>
-              <div className={styles.socialLinks}>
+              <motion.div className={styles.socialLinks} variants={containerVariants} initial="initial" whileInView="animate" viewport={{ once: true }}>
                 {socialLinks.map((link, index) => (
-                  <a key={index} href={link.href} target="_blank" rel="noopener noreferrer">
+                  <motion.a key={index} href={link.href} target="_blank" rel="noopener noreferrer" initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ scale: 1.15, y: -4 }} whileTap={{ scale: 0.95 }} transition={{ duration: 0.25 }}>
                     {React.cloneElement(link.icon, { size: 24 })}
-                  </a>
+                  </motion.a>
                 ))}
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
             {/* --- Availability --- */}
-            <div className={styles.availabilityCard}>
+            <motion.div className={styles.availabilityCard} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.45 }}>
               <h4>{t('availability_title')}</h4>
               <p>{t('availability_text')}</p>
-            </div>
-          </div>
-        </div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,8 +1,9 @@
 'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import Me0 from '@/assets/me0.jpg';
 import ResumeDownload from './ResumeDownload';
 import { useTranslations } from 'next-intl';
@@ -12,29 +13,31 @@ import styles from './HeroSection.module.css'; // Import the CSS module
 const HeroSection = () => {
   const t = useTranslations('hero');
 
-  const socialLinks = [
+  // ✅ Typed social links
+  const socialLinks: { icon: React.ElementType; href: string }[] = [
     { icon: Mail, href: 'mailto:carlglain@example.com' },
     { icon: Github, href: 'https://github.com/carlglain' },
     { icon: Linkedin, href: 'https://www.linkedin.com/in/nyuysemo-calglain-ab2a60221' },
   ];
 
-  const containerVariants = {
-    initial: {},
-    animate: {
+  // ✅ Fixed Variants typing
+  const containerVariants: Variants = {
+    hidden: {},
+    show: {
       transition: {
         staggerChildren: 0.2,
-        delayChildren: 0.3
-      }
-    }
+        delayChildren: 0.3,
+      },
+    },
   };
 
-  const itemVariants = {
-    initial: { opacity: 0, y: 30 },
-    animate: { 
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    show: { 
       opacity: 1, 
       y: 0,
-      transition: { duration: 0.6, ease: [0.6, -0.05, 0.01, 0.99] }
-    }
+      transition: { duration: 0.6, ease: [0.6, -0.05, 0.01, 0.99] },
+    },
   };
 
   return (
@@ -43,10 +46,9 @@ const HeroSection = () => {
         <motion.div 
           className={styles.contentWrapper}
           variants={containerVariants}
-          initial="initial"
-          animate="animate"
+          initial="hidden"
+          animate="show"
         >
-          
           {/* ======== Left Content ======== */}
           <motion.div 
             className={styles.textContent}
@@ -142,7 +144,7 @@ const HeroSection = () => {
                 />
               </motion.div>
               <motion.div 
-                className={`${styles.resumeDownload} `}
+                className={styles.resumeDownload}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.2 }}

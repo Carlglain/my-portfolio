@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import {NextIntlClientProvider} from 'next-intl';
+import PageTransition from '@/components/PageTransition';
 import {getLocale} from 'next-intl/server';
  
 
@@ -32,7 +33,9 @@ export default async  function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-    <NextIntlClientProvider>{children}</NextIntlClientProvider>
+    <NextIntlClientProvider>
+      <PageTransition>{children}</PageTransition>
+    </NextIntlClientProvider>
       </body>
     </html>
   );

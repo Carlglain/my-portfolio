@@ -1,7 +1,8 @@
 'use client';
+
 import React, { useRef } from 'react';
 import { useTranslations } from 'next-intl';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, type Variants } from 'framer-motion';
 import { Briefcase, GraduationCap, MapPin, Calendar, Download } from 'lucide-react';
 import Link from 'next/link';
 import styles from './AboutSection.module.css'; // Import the CSS module
@@ -9,7 +10,7 @@ import styles from './AboutSection.module.css'; // Import the CSS module
 const AboutSection = () => {
   const t = useTranslations('about');
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
+  const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
 
   const stats = [
     { number: '2+', label: t('years_experience') },
@@ -17,33 +18,35 @@ const AboutSection = () => {
     { number: '1+', label: t('happy_clients') },
   ];
 
-  const coreSkills = ['JavaScript', 'React', 'Node.js', 'Python', 'MongoDB', 'Firebase', 'Git', 'Expo', 'React Native','Next.js'];
+  const coreSkills = [
+    'JavaScript', 'React', 'Node.js', 'Python', 'MongoDB', 
+    'Firebase', 'Git', 'Expo', 'React Native', 'Next.js'
+  ];
 
-  const containerVariants = {
-    initial: {},
-    animate: {
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
+  // ✅ Properly typed motion variants
+  const containerVariants: Variants = {
+    hidden: {},
+    show: {
+      transition: { staggerChildren: 0.1 },
+    },
   };
 
-  const itemVariants = {
-    initial: { opacity: 0, y: 30 },
-    animate: { 
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    show: { 
       opacity: 1, 
       y: 0,
-      transition: { duration: 0.6, ease: [0.6, -0.05, 0.01, 0.99] }
-    }
+      transition: { duration: 0.6, ease: [0.6, -0.05, 0.01, 0.99] },
+    },
   };
 
-  const cardVariants = {
-    initial: { opacity: 0, y: 20 },
-    animate: { 
+  const cardVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    show: { 
       opacity: 1, 
       y: 0,
-      transition: { duration: 0.5 }
-    }
+      transition: { duration: 0.5 },
+    },
   };
 
   return (
@@ -55,7 +58,7 @@ const AboutSection = () => {
           className={styles.sectionHeader}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
+          viewport={{ once: true, margin: '-50px' }}
           transition={{ duration: 0.6 }}
         >
           <h2>{t('title')}</h2>
@@ -66,8 +69,8 @@ const AboutSection = () => {
         <motion.div 
           className={styles.gridContainer}
           variants={containerVariants}
-          initial="initial"
-          animate={isInView ? "animate" : "initial"}
+          initial="hidden"
+          animate={isInView ? 'show' : 'hidden'}
         >
           
           {/* ======== Left Column ======== */}

@@ -1,5 +1,6 @@
-'use client'
+"use client"
 import React from 'react';
+import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { Github, Linkedin, Twitter, Mail, ArrowUp } from 'lucide-react';
 import styles from './Footer.module.css'; // Make sure this path is correct
@@ -38,62 +39,87 @@ const Footer = () => {
     { label: t('consulting') }
   ];
 
+  const containerVariants = {
+    initial: {},
+    animate: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } }
+  };
+
+  const itemVariants = {
+    initial: { opacity: 0, y: 14 },
+    animate: { opacity: 1, y: 0, transition: { duration: 0.45 } }
+  };
+
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
         
         {/* ======== Footer Main Content Grid ======== */}
-        <div className={styles.footerGrid}>
+        <motion.div className={styles.footerGrid} variants={containerVariants} initial="initial" whileInView="animate" viewport={{ once: true, margin: '-80px' }}>
           
           {/* --- Brand & Socials --- */}
-          <div className={styles.brandSection}>
+          <motion.div className={styles.brandSection} variants={itemVariants}>
             <h3>Carlglain 🔥</h3>
             <p>{t('description')}</p>
             <div className={styles.socialLinks}>
               {socialLinks.map((link) => (
-                <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" aria-label={link.label}>
+                <motion.a 
+                  key={link.label} 
+                  href={link.href} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  aria-label={link.label}
+                  whileHover={{ scale: 1.15, y: -3 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ duration: 0.2 }}
+                >
                   {React.cloneElement(link.icon, { size: 24 })}
-                </a>
+                </motion.a>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* --- Quick Links --- */}
-          <div className={styles.linkSection}>
+          <motion.div className={styles.linkSection} variants={itemVariants}>
             <h4>{t('quick_links')}</h4>
             <ul className={styles.linkList}>
               {quickLinks.map((link) => (
                 <li key={link.href}><a href={link.href}>{link.label}</a></li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
           {/* --- Services --- */}
-          <div className={styles.linkSection}>
+          <motion.div className={styles.linkSection} variants={itemVariants}>
             <h4>{t('services')}</h4>
             <ul className={styles.linkList}>
               {servicesLinks.map((service) => (
                 <li key={service.label}><span>{service.label}</span></li>
               ))}
             </ul>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* ======== Footer Bottom Bar ======== */}
-        <div className={styles.footerBottom}>
+        <motion.div className={styles.footerBottom} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
           <p>© {currentYear} {t('copyright')}</p>
           <div className={styles.legalLinks}>
             <a href="#privacy">{t('privacy_policy')}</a>
             <a href="#terms">{t('terms_of_service')}</a>
           </div>
-        </div>
+        </motion.div>
 
       </div>
       
       {/* ======== Back to Top Button ======== */}
-      <button onClick={scrollToTop} className={styles.backToTopButton} aria-label="Back to top">
+      <motion.button 
+        onClick={scrollToTop} 
+        className={styles.backToTopButton} 
+        aria-label="Back to top"
+        whileHover={{ y: -4 }}
+        whileTap={{ scale: 0.95 }}
+      >
         <ArrowUp size={24} />
-      </button>
+      </motion.button>
     </footer>
   );
 };
