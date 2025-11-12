@@ -137,6 +137,7 @@ const HeroSection = () => {
                   <Image
                     src={Me0}
                     alt="Carlglain Nyuykividzem"
+                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className={styles.profileImage}
                     fill
                     priority

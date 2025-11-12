@@ -115,6 +115,7 @@
         "phone_title": "Téléphone",
         "follow_me": "Suivez-moi",
         "availability_title": "Disponibilité actuelle",
+        "sending": "Envoi...",
         "availability_text": "Je suis actuellement disponible pour des travaux freelance et des opportunités à temps plein. Je suis particulièrement intéressé par les projets de développement full-stack, le développement d'applications mobiles, le conseil technique et les contributions open source."
     },
     "footer": {

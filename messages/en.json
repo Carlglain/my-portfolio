@@ -23,7 +23,7 @@
         "description": "I am a passionate software engineer specializing in web and mobile development. I love creating innovative solutions that solve real-world problems and enhance user experiences.",
         "button1": "View My Skills",
         "button2": "See My Projects",
-        "button3": "Contact Me",
+        "button3": "Hire Me",
         "button4": "Download Resume",
         "scroll_down": "Scroll Down"
     },
@@ -115,6 +115,7 @@
         "phone_title": "Phone",
         "follow_me": "Follow Me",
         "availability_title": "Current Availability",
+        "sending": "Sending...",
         "availability_text": "I'm currently available for freelance work, full-time opportunities and Internships. I'm particularly interested in full-stack development projects, mobile app development, technical consulting, and open source contributions."
     },
     "footer": {
