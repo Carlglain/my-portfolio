@@ -10,15 +10,16 @@ const ProjectsSection = () => {
   const t = useTranslations('projects');
 
   const projects = [
-    {
-      title: "Expenditure tracking Platform (Expendee)",
-      description: "A full-stack AI powered platform built with React.js, featuring user authentication. it permits users to track their expenses.",
-      image: "/work-1.png",
-      technologies: ["React.js", "MongoDB", "CSS", "express.js"],
-      liveUrl: "https://expendee.vercel.app/",
-      githubUrl: "https://github.com/Carlglain/Expendee",
-      featured: true
-    },
+   {
+  title: "Nkwa Pay",
+  description: "A robust mobile money payment infrastructure that simplifies integration with MTN and Orange mobile money services in Cameroon, enabling businesses to accept and manage payments via unified APIs.",
+  image: "/nkwapay.png", // update with appropriate Nkwa Pay image
+  technologies: ["React.js", "Next.js","Nest.js", "REST API", "Webhook Integration"],
+  liveUrl: "https://pay.mynkwa.com/",
+  githubUrl: "https://github.com/Carlglain/", // update if you have a related GitHub repo
+  featured: true
+},
+
     {
       title: "Car Fault Diagnostic System (MottoFix)",
       description: "A mobile application that diagnoses vehicle faults from images and audio recordings using AI-powered analysis. Features Firebase authentication, real-time diagnostic results, and a clean React Native (Expo) interface.",
@@ -26,6 +27,15 @@ const ProjectsSection = () => {
       technologies: ["React Native", "Expo", "Firebase", "Node.js", "Gemini API","Youtube API"],
       liveUrl: "",
       githubUrl: "https://github.com/Carlglain/MottoFix",
+      featured: true
+    },
+      {
+      title: "Expenditure tracking Platform (Expendee)",
+      description: "A full-stack AI powered platform built with React.js, featuring user authentication. it permits users to track their expenses.",
+      image: "/work-1.png",
+      technologies: ["React.js", "MongoDB", "CSS", "express.js"],
+      liveUrl: "https://expendee.vercel.app/",
+      githubUrl: "https://github.com/Carlglain/Expendee",
       featured: true
     },
     
