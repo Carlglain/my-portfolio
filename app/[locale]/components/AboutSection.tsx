@@ -130,7 +130,7 @@ const AboutSection = () => {
               >
                 <Link href="/Resume.pdf" download className={styles.downloadButton}>
                   <Download size={20} />
-                  {t('download_cv')}
+                  {t('download_cv') }
                 </Link>
               </motion.div>
             </motion.div>
